@@ -1,32 +1,37 @@
-from flask import Flask, send_file
+"""
+Flask-приложение.
+"""
+
 from datetime import datetime
-from flask_cors import CORS
+import io
+
 import numpy as np
 import matplotlib.pyplot as plt
-import io
+from flask import Flask, send_file
+from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route('/')
 def index():
+    """Приветствует пользователя и возвращает текущее время в формате 'HH:MM:SS'."""
     current_time = datetime.now().strftime('%H:%M:%S')
     return f'<b>Hello World at {current_time}</b>!'
 
 @app.route('/plot')
 def plot():
-    # Генерация данных для графика в форме сердечка
+    """Генерирует график в форме сердечка и возвращает его как изображение."""
     t = np.linspace(0, 2 * np.pi, 1000)
-    x = 16 * np.sin(t)**3
+    x = 16 * np.sin(t) ** 3
     y = 13 * np.cos(t) - 5 * np.cos(2 * t) - 2 * np.cos(3 * t) - np.cos(4 * t)
 
-    # Создание графика
     plt.figure(figsize=(8, 6))
     plt.plot(x, y, color='red')
     plt.title('График в форме сердечка')
     plt.xlabel('X')
     plt.ylabel('Y')
-    plt.axis('equal')  # Устанавливаем равные масштабы по осям
+    plt.axis('equal')
     plt.grid(True)
 
     # Сохранение графика в буфер
@@ -37,6 +42,7 @@ def plot():
 
     # Возвращаем изображение
     return send_file(buf, mimetype='image/png')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
