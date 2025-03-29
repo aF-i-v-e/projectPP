@@ -17,3 +17,7 @@
 | Минимальная сборка               | 1         | 1         | 0         | 10        | 1         | 0         | 0         | -         | -         | https://github.com/aF-i-v-e/projectPP/actions/runs/14146238965/job/39633875038 |
 | Кэширование                      | 1         | 0         | 1         | 8         | 2         | 0         | 1         | 0         | 1         | https://github.com/aF-i-v-e/projectPP/actions/runs/14146623969/job/39634686436 |
 | Кэширование + SonarQube + PyLint |
+
+
+Результаты проверки pylint:
+![img_1.png](img_1.png)
