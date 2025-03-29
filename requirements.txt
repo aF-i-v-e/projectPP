@@ -1,4 +1,6 @@
 Flask
 flask-cors
+numpy
+matplotlib
 pylint
 bandit
