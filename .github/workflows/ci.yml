@@ -31,6 +31,11 @@ jobs:
       - name: Run Pylint
         run: pylint src/main.py
 
+      # security
+      - name: Run Bandit
+        run: bandit -r src/main.py
+
+
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
