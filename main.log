@@ -1,0 +1,12 @@
+Start application on host: 0.0.0.0 port: 5000
+Got request
+Got request
+Start application on host: 0.0.0.0 port: 5000
+Got request
+Send message: Привет, 2! Текущее время: 18:33:28.
+Got request
+Send message: Привет, 1! Текущее время: 18:33:30.
+The limit on requests per minute has been reached
+Start application on host: 0.0.0.0 port: 5000
+Got request
+Send message: Привет, Алиса! Текущее время: 18:45:23.
